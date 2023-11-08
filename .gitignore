@@ -36,3 +36,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/src/main/java/org/example/
+/src/main/java/seminars/
+/src/main/java/org/example/
+/src/main/java/seminars/
+/src/main/java/org/example/
