@@ -1,68 +1,55 @@
 package seminars.second.hw;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class VehicleTest {
-    Car car;
-    Motorcycle moto;
-
-    /* Создаются экземпляры объекта Car и Motorcycle. */
-    @BeforeEach
-    public void createVehicle() {
-        car = new Car("Dodge", "Ram", 2010);
-        moto = new Motorcycle("Suzuki", "GSX-R", 2010);
-    }
-
-    /* Проверка, что экземпляр объекта Car также является экземпляром транспортного средства (используя оператор instanceof). */
     @Test
     public void testCarIsInstanceOfVehicle() {
+        Car car = new Car("Dodge", "Ram", 2010);
         assertTrue(car instanceof Vehicle);
     }
 
-    /* Проверка, что объект Car создается с 4-мя колесами. */
     @Test
-    public void createCarWithFourWheels() {
+    public void testCarHasFourWheels() {
+        Car car = new Car("Honda", "Civic", 2006);
         assertEquals(car.getNumWheels(), 4);
     }
 
-    /* Проверка, что объект Motorcycle создается с 2-мя колесами. */
     @Test
-    public void createMotorcycleWithFourWheels() {
-        assertEquals(moto.getNumWheels(), 2);
+    public void testMotorcycleHasTwoWheels() {
+        Motorcycle motorcycle = new Motorcycle("Yamaha", "Bolt", 2017);
+        assertEquals(motorcycle.getNumWheels(), 2);
     }
 
-    /* Проверка, что объект Car развивает скорость 60 в режиме тестового вождения (используя метод testDrive()). */
     @Test
-    public void carSpeedInTestDrive() {
+    public void testCarSpeed() {
+        Car car = new Car("Honda", "Civic", 2012);
         car.testDrive();
         assertEquals(car.getSpeed(), 60);
     }
 
-    /* Проверка, что объект Motorcycle развивает скорость 75 в режиме тестового вождения (используя метод testDrive()). */
     @Test
-    public void motoSpeedInTestDrive() {
-        moto.testDrive();
-        assertEquals(moto.getSpeed(), 75);
+    public void testMotorcycleSpeed() {
+        Motorcycle motorcycle = new Motorcycle("Yamaha", "Bolt", 2017);
+        motorcycle.testDrive();
+        assertEquals(motorcycle.getSpeed(), 75);
     }
 
-    /* Проверка, что в режиме парковки (сначала testDrive, потом park, т.е. эмуляция движения транспорта)
-    машина останавливается (speed = 0). */
     @Test
-    public void carSpeedInTestDriveToParking() {
+    public void testCarPark() {
+        Car car = new Car("Honda", "Civic", 2012);
         car.testDrive();
         car.park();
         assertEquals(car.getSpeed(), 0);
     }
 
-    /* Проверка, что в режиме парковки (сначала testDrive, потом park,
-     т.е. эмуляция движения транспорта) мотоцикл останавливается (speed = 0). */
     @Test
-    public void motoSpeedInTestDriveToParking() {
-        moto.testDrive();
-        moto.park();
-        assertEquals(moto.getSpeed(), 0);
+    public void testMotorcyclePark() {
+        Motorcycle motorcycle = new Motorcycle("Yamaha", "Bolt", 2017);
+        motorcycle.testDrive();
+        motorcycle.park();
+        assertEquals(motorcycle.getSpeed(), 0);
     }
 }
