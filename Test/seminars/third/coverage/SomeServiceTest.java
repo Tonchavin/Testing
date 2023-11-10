@@ -5,8 +5,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seminars.third.hw.MainHW.evenOddNumber;
-import static seminars.third.hw.MainHW.numberInInterval;
+import static seminars.third.coverage.SomeService.evenOddNumber;
+import static seminars.third.coverage.SomeService.numberInInterval;
+
 
 class SomeServiceTest {
     // HW 3.1. Нужно покрыть тестами метод на 100%
