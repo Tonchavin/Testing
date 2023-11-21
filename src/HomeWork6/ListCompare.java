@@ -7,7 +7,7 @@ class ListCompare {
      * Проверяет пустой ли список.
      * Вычисляет средне арифметическое значение списка
      *
-     * @param lst
+     * @param lst список
      * @return - Возвращает арифметическое значение списка
      **/
     public static Double getListAverage(final List<Number> lst) {
@@ -28,8 +28,8 @@ class ListCompare {
     /**
      * Сравнивает средние арифметические значения числовых списков.
      *
-     * @param lst1
-     * @param lst2
+     * @param lst1 первый список
+     * @param lst2 второй список
      **/
     public static void compareListsAverages(final List<Number> lst1,
                                             final List<Number> lst2) {
